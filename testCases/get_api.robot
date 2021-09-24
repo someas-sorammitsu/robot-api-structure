@@ -11,3 +11,6 @@ TC2 Get Request
     Get API Request
 TC3 Get API staff
     Get Staff API Request
+
+TC4 Post Data
+    Post Data       World       Phnom Peng

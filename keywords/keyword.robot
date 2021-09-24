@@ -15,3 +15,21 @@ Get Staff API Request
     ...     Content-Type=application/json
     ${response}=      GET Request           ${base_url}      ${staff}      ${headers}
 
+Post Data
+    [Arguments]
+    ...     ${name}
+    ...     ${location}
+    ${headers}=     Create Dictionary
+     ...      Content-Type=application/json
+     ${json}      Catenate
+     ...	{
+     ...		"name":"${name}",
+     ...        "location":"${location}"
+     ...		}
+     Log    ${json}
+    ${res}=     Post Requests       ${base_url}          ${path}        ${json}         ${headers}
+#    Log         ${res.json()}
+    [Return]        ${res}
+
+
+
