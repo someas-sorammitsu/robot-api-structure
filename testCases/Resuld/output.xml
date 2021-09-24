@@ -1,630 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1rc1 (Python 3.9.5 on darwin)" generated="20210923 20:59:48.107" rpa="false" schemaversion="2">
-<suite id="s1" name="Get Api" source="/Users/Shared/sharing/api_automation/robot-api-structure/testCases/get_api.robot">
-<test id="s1-t1" name="TC1 Get Request">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysesion</arg>
-<arg>http://localhost:3000/</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20210923 20:59:48.218" level="INFO">Creating Session using : alias=mysesion, url=http://localhost:3000/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20210923 20:59:48.218" endtime="20210923 20:59:48.218"/>
-</kw>
-<kw name="Get On Session" library="RequestsLibrary">
-<var>${resp}</var>
-<arg>mysesion</arg>
-<arg>company</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20210923 20:59:48.230" level="INFO">GET Request : url=http://localhost:3000/company 
- path_url=/company 
- headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20210923 20:59:48.230" level="INFO">GET Response : url=http://localhost:3000/company 
- status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'ETag': 'W/"9d6-7sQJbCnwW4IQgmvtVQQCsX40HrI"', 'Content-Encoding': 'gzip', 'Date': 'Thu, 23 Sep 2021 13:59:48 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Transfer-Encoding': 'chunked'} 
- body=[
-  {
-    "name": "the myth3",
-    "location": "OKay",
-    "id": 8
-  },
-  {
-    "name": "Friend",
-    "location": "USA",
-    "id": 9
-  },
-  {
-    "name": "Hello",
-    "location": "Koh Pich",
-    "id": 10
-  },
-  {
-    "name": "Friend",
-    "location": "USA",
-    "id": 11
-  },
-  {
-    "name": "Hello",
-    "location": "Koh Pich",
-    "id": 12
-  },
-  {
-    "name": "Hello",
-    "location": "Koh Pich",
-    "id": 13
-  },
-  {
-    "name": "Hellooo",
-    "location": "CCC",
-    "id": 14
-  },
-  {
-    "name": "Mytest",
-    "location": "KOM POT",
-    "id": 15
-  },
-  {
-    "name": "Worker",
-    "location": "PP",
-    "id": 16
-  },
-  {
-    "name": "Worker",
-    "location": "PP",
-    "id": 17
-  },
-  {
-    "name": "Test1",
-    "location": "PP",
-    "id": 18
-  },
-  {
-    "name": "Test2",
-    "location": "PP",
-    "id": 19
-  },
-  {
-    "name": "Test2",
-    "location": "PP",
-    "id": 20
-  },
-  {
-    "name": "Test2",
-    "location": "PP",
-    "id": 21
-  },
-  {
-    "name": "Chamnn",
-    "location": "PP",
-    "id": 22
-  },
-  {
-    "name": "vannak KH",
-    "location": "PP",
-    "id": 23
-  },
-  [
-    {
-      "name": "HH",
-      "location": "Koh Pich"
-    },
-    {
-      "name": "KK",
-      "location": "Koh Pich"
-    },
-    {
-      "name": "GG",
-      "location": "Koh Pich"
-    }
-  ],
-  {
-    "name": "vannak KH",
-    "location": "PP",
-    "id": 24
-  },
-  {
-    "name": "vannak KH",
-    "location": "PP",
-    "id": 25
-  },
-  [
-    {
-      "name": "Google",
-      "location": "Koh Pich"
-    }
-  ],
-  {
-    "name": "USA",
-    "location": "Koh Pich",
-    "id": 27
-  },
-  {
-    "name": "Post",
-    "location": "CCC",
-    "id": 28
-  },
-  {
-    "name": "MyPost",
-    "location": "Koh PIC",
-    "id": 29
-  },
-  {
-    "id": 30
-  },
-  {
-    "id": 31
-  },
-  {
-    "id": 32
-  },
-  {
-    "id": 33
-  },
-  {
-    "id": 34
-  },
-  {
-    "name": "Hello PU",
-    "location": "USA",
-    "id": 35
-  },
-  {
-    "name": "Hello PU",
-    "location": "USA",
-    "id": 36
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 37
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 38
-  },
-  {
-    "name": "Hee",
-    "location": "LLL",
-    "id": 39
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 40
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 41
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 42
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 43
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 44
-  }
-] 
- </msg>
-<msg timestamp="20210923 20:59:48.230" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210923 20:59:48.218" endtime="20210923 20:59:48.230"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${resp}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210923 20:59:48.230" endtime="20210923 20:59:48.231"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${resp.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210923 20:59:48.231" endtime="20210923 20:59:48.233"/>
-</kw>
-<status status="PASS" starttime="20210923 20:59:48.217" endtime="20210923 20:59:48.233"/>
-</test>
-<test id="s1-t2" name="TC2 Get Request">
-<kw name="Get API Request" library="keyword">
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${headers}</var>
-<arg>Accept=application/json</arg>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20210923 20:59:48.234" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20210923 20:59:48.234" endtime="20210923 20:59:48.234"/>
-</kw>
-<kw name="GET Request" library="commands">
-<var>${response}</var>
-<arg>${base_url}</arg>
-<arg>${path}</arg>
-<arg>${headers}</arg>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20210923 20:59:48.235" level="INFO">Creating Session using : alias=mysession, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20210923 20:59:48.235" endtime="20210923 20:59:48.235"/>
-</kw>
-<kw name="Get On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>${url_path}</arg>
-<arg>headers=${headers}</arg>
-<arg>expected_status=anything</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20210923 20:59:48.245" level="INFO">GET Request : url=http://localhost:3000/company 
- path_url=/company 
- headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
- body=None 
- </msg>
-<msg timestamp="20210923 20:59:48.245" level="INFO">GET Response : url=http://localhost:3000/company 
- status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'ETag': 'W/"9d6-7sQJbCnwW4IQgmvtVQQCsX40HrI"', 'Content-Encoding': 'gzip', 'Date': 'Thu, 23 Sep 2021 13:59:48 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Transfer-Encoding': 'chunked'} 
- body=[
-  {
-    "name": "the myth3",
-    "location": "OKay",
-    "id": 8
-  },
-  {
-    "name": "Friend",
-    "location": "USA",
-    "id": 9
-  },
-  {
-    "name": "Hello",
-    "location": "Koh Pich",
-    "id": 10
-  },
-  {
-    "name": "Friend",
-    "location": "USA",
-    "id": 11
-  },
-  {
-    "name": "Hello",
-    "location": "Koh Pich",
-    "id": 12
-  },
-  {
-    "name": "Hello",
-    "location": "Koh Pich",
-    "id": 13
-  },
-  {
-    "name": "Hellooo",
-    "location": "CCC",
-    "id": 14
-  },
-  {
-    "name": "Mytest",
-    "location": "KOM POT",
-    "id": 15
-  },
-  {
-    "name": "Worker",
-    "location": "PP",
-    "id": 16
-  },
-  {
-    "name": "Worker",
-    "location": "PP",
-    "id": 17
-  },
-  {
-    "name": "Test1",
-    "location": "PP",
-    "id": 18
-  },
-  {
-    "name": "Test2",
-    "location": "PP",
-    "id": 19
-  },
-  {
-    "name": "Test2",
-    "location": "PP",
-    "id": 20
-  },
-  {
-    "name": "Test2",
-    "location": "PP",
-    "id": 21
-  },
-  {
-    "name": "Chamnn",
-    "location": "PP",
-    "id": 22
-  },
-  {
-    "name": "vannak KH",
-    "location": "PP",
-    "id": 23
-  },
-  [
-    {
-      "name": "HH",
-      "location": "Koh Pich"
-    },
-    {
-      "name": "KK",
-      "location": "Koh Pich"
-    },
-    {
-      "name": "GG",
-      "location": "Koh Pich"
-    }
-  ],
-  {
-    "name": "vannak KH",
-    "location": "PP",
-    "id": 24
-  },
-  {
-    "name": "vannak KH",
-    "location": "PP",
-    "id": 25
-  },
-  [
-    {
-      "name": "Google",
-      "location": "Koh Pich"
-    }
-  ],
-  {
-    "name": "USA",
-    "location": "Koh Pich",
-    "id": 27
-  },
-  {
-    "name": "Post",
-    "location": "CCC",
-    "id": 28
-  },
-  {
-    "name": "MyPost",
-    "location": "Koh PIC",
-    "id": 29
-  },
-  {
-    "id": 30
-  },
-  {
-    "id": 31
-  },
-  {
-    "id": 32
-  },
-  {
-    "id": 33
-  },
-  {
-    "id": 34
-  },
-  {
-    "name": "Hello PU",
-    "location": "USA",
-    "id": 35
-  },
-  {
-    "name": "Hello PU",
-    "location": "USA",
-    "id": 36
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 37
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 38
-  },
-  {
-    "name": "Hee",
-    "location": "LLL",
-    "id": 39
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 40
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 41
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 42
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 43
-  },
-  {
-    "name": "World",
-    "location": "Phnom Peng",
-    "id": 44
-  }
-] 
- </msg>
-<msg timestamp="20210923 20:59:48.246" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210923 20:59:48.236" endtime="20210923 20:59:48.246"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210923 20:59:48.246" endtime="20210923 20:59:48.247"/>
-</kw>
-<msg timestamp="20210923 20:59:48.247" level="INFO">${response} = None</msg>
-<status status="PASS" starttime="20210923 20:59:48.234" endtime="20210923 20:59:48.247"/>
-</kw>
-<status status="PASS" starttime="20210923 20:59:48.233" endtime="20210923 20:59:48.247"/>
-</kw>
-<status status="PASS" starttime="20210923 20:59:48.233" endtime="20210923 20:59:48.248"/>
-</test>
-<test id="s1-t3" name="TC3 Get API staff">
-<kw name="Get Staff API Request" library="keyword">
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${headers}</var>
-<arg>Accept=application/json</arg>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20210923 20:59:48.249" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20210923 20:59:48.249" endtime="20210923 20:59:48.249"/>
-</kw>
-<kw name="GET Request" library="commands">
-<var>${response}</var>
-<arg>${base_url}</arg>
-<arg>${staff}</arg>
-<arg>${headers}</arg>
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20210923 20:59:48.250" level="INFO">Creating Session using : alias=mysession, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20210923 20:59:48.250" endtime="20210923 20:59:48.250"/>
-</kw>
-<kw name="Get On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>${url_path}</arg>
-<arg>headers=${headers}</arg>
-<arg>expected_status=anything</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20210923 20:59:48.261" level="INFO">GET Request : url=http://localhost:3000/staff 
- path_url=/staff 
- headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
- body=None 
- </msg>
-<msg timestamp="20210923 20:59:48.261" level="INFO">GET Response : url=http://localhost:3000/staff 
- status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'ETag': 'W/"486-lT4GZHw+zrodQBEGAXxPFYMqD5U"', 'Content-Encoding': 'gzip', 'Date': 'Thu, 23 Sep 2021 13:59:48 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5', 'Transfer-Encoding': 'chunked'} 
- body=[
-  {
-    "id": 1,
-    "name": "Jo",
-    "phone": "0987654321"
-  },
-  {
-    "id": 2,
-    "name": "Jo",
-    "phone": "0987654321"
-  },
-  {
-    "name": "GG",
-    "phone": "0987654321",
-    "id": 3
-  },
-  {
-    "name": "GG",
-    "phone": "0987654321",
-    "id": 4
-  },
-  {
-    "name": "Lyly",
-    "phone": "0987654321",
-    "id": 5
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 6
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 7
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 8
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 9
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 10
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 11
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 12
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 13
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 14
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 15
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 16
-  },
-  {
-    "name": "Atuy",
-    "phone": "0987654321",
-    "id": 17
-  }
-] 
- </msg>
-<msg timestamp="20210923 20:59:48.261" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20210923 20:59:48.251" endtime="20210923 20:59:48.261"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210923 20:59:48.262" endtime="20210923 20:59:48.262"/>
-</kw>
-<msg timestamp="20210923 20:59:48.262" level="INFO">${response} = None</msg>
-<status status="PASS" starttime="20210923 20:59:48.249" endtime="20210923 20:59:48.262"/>
-</kw>
-<status status="PASS" starttime="20210923 20:59:48.248" endtime="20210923 20:59:48.262"/>
-</kw>
-<status status="PASS" starttime="20210923 20:59:48.248" endtime="20210923 20:59:48.263"/>
-</test>
-<test id="s1-t4" name="TC4 Post Data">
-<kw name="Post Data" library="keyword">
-<arg>World</arg>
-<arg>Phnom Peng</arg>
+<robot generator="Robot 4.1rc1 (Python 3.9.5 on darwin)" generated="20210924 19:51:21.143" rpa="false" schemaversion="2">
+<suite id="s1" name="Api Upada Data" source="/Users/Shared/sharing/api_automation/robot-api-structure/testCases/api_upada_data.robot">
+<test id="s1-t1" name="TC1 Update Data">
+<kw name="Update Data" library="keyword">
+<arg>11</arg>
+<arg>AhPev</arg>
+<arg>Cambodia</arg>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${headers}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20210923 20:59:48.265" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20210923 20:59:48.264" endtime="20210923 20:59:48.265"/>
+<msg timestamp="20210924 19:51:21.368" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210924 19:51:21.368" endtime="20210924 19:51:21.368"/>
 </kw>
 <kw name="Catenate" library="BuiltIn">
 <var>${json}</var>
@@ -633,27 +20,106 @@
 <arg>"location":"${location}"</arg>
 <arg>}</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<msg timestamp="20210923 20:59:48.265" level="INFO">${json} = { "name":"World", "location":"Phnom Peng" }</msg>
-<status status="PASS" starttime="20210923 20:59:48.265" endtime="20210923 20:59:48.265"/>
+<msg timestamp="20210924 19:51:21.369" level="INFO">${json} = { "name":"AhPev", "location":"Cambodia" }</msg>
+<status status="PASS" starttime="20210924 19:51:21.368" endtime="20210924 19:51:21.369"/>
 </kw>
 <kw name="Log" library="BuiltIn">
 <arg>${json}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20210923 20:59:48.266" level="INFO">{ "name":"World", "location":"Phnom Peng" }</msg>
-<status status="PASS" starttime="20210923 20:59:48.265" endtime="20210923 20:59:48.266"/>
+<msg timestamp="20210924 19:51:21.369" level="INFO">{ "name":"AhPev", "location":"Cambodia" }</msg>
+<status status="PASS" starttime="20210924 19:51:21.369" endtime="20210924 19:51:21.369"/>
 </kw>
-<kw name="Post Requests" library="commands">
+<kw name="Update Requests" library="commands">
 <var>${res}</var>
 <arg>${base_url}</arg>
-<arg>${path}</arg>
+<arg>${path}/${id}</arg>
+<arg>${json}</arg>
+<arg>${headers}</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>update</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210924 19:51:21.370" level="INFO">Creating Session using : alias=update, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210924 19:51:21.369" endtime="20210924 19:51:21.370"/>
+</kw>
+<kw name="Put On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>update</arg>
+<arg>${url_path}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20210924 19:51:21.382" level="INFO">PUT Request : url=http://localhost:3000/company/11 
+ path_url=/company/11 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '41'} 
+ body={ "name":"AhPev", "location":"Cambodia" } 
+ </msg>
+<msg timestamp="20210924 19:51:21.382" level="INFO">PUT Response : url=http://localhost:3000/company/11 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '59', 'ETag': 'W/"3b-zG5V7uskmGJtO1Y4KJt52sOdYwI"', 'Date': 'Fri, 24 Sep 2021 12:51:21 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+  "name": "AhPev",
+  "location": "Cambodia",
+  "id": 11
+} 
+ </msg>
+<msg timestamp="20210924 19:51:21.382" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210924 19:51:21.370" endtime="20210924 19:51:21.382"/>
+</kw>
+<msg timestamp="20210924 19:51:21.382" level="INFO">${res} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210924 19:51:21.369" endtime="20210924 19:51:21.382"/>
+</kw>
+<status status="PASS" starttime="20210924 19:51:21.367" endtime="20210924 19:51:21.383"/>
+</kw>
+<status status="PASS" starttime="20210924 19:51:21.367" endtime="20210924 19:51:21.383"/>
+</test>
+<test id="s1-t2" name="TC2 POST Login Mount Bank">
+<kw name="Login Mountbank" library="keyword">
+<arg>someas</arg>
+<arg>password</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>charset=utf-8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210924 19:51:21.384" level="INFO">${headers} = {'Content-Type': 'application/json', 'charset': 'utf-8'}</msg>
+<status status="PASS" starttime="20210924 19:51:21.384" endtime="20210924 19:51:21.384"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${json}</var>
+<arg>{</arg>
+<arg>"data":{</arg>
+<arg>"username": "${username}",</arg>
+<arg>"password": "${password}",</arg>
+<arg>"gender": "male",</arg>
+<arg>"phone": "phone",</arg>
+<arg>"amount": 1,</arg>
+<arg>"mb":"Hello MB Bank"</arg>
+<arg>}</arg>
+<arg>}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210924 19:51:21.384" level="INFO">${json} = { "data":{ "username": "someas", "password": "password", "gender": "male", "phone": "phone", "amount": 1, "mb":"Hello MB Bank" } }</msg>
+<status status="PASS" starttime="20210924 19:51:21.384" endtime="20210924 19:51:21.384"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${json}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210924 19:51:21.384" level="INFO">{ "data":{ "username": "someas", "password": "password", "gender": "male", "phone": "phone", "amount": 1, "mb":"Hello MB Bank" } }</msg>
+<status status="PASS" starttime="20210924 19:51:21.384" endtime="20210924 19:51:21.385"/>
+</kw>
+<kw name="Post Requests" library="commands">
+<var>${response}</var>
+<arg>${mountbank}</arg>
+<arg>${mb_test}</arg>
 <arg>${json}</arg>
 <arg>${headers}</arg>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>Post</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20210923 20:59:48.267" level="INFO">Creating Session using : alias=Post, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20210923 20:59:48.267" endtime="20210923 20:59:48.268"/>
+<msg timestamp="20210924 19:51:21.385" level="INFO">Creating Session using : alias=Post, url=http://localhost:2020, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210924 19:51:21.385" endtime="20210924 19:51:21.385"/>
 </kw>
 <kw name="Post On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -663,45 +129,120 @@
 <arg>headers=${headers}</arg>
 <arg>expected_status=anything</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20210923 20:59:48.277" level="INFO">POST Request : url=http://localhost:3000/company 
- path_url=/company 
- headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '43'} 
- body={ "name":"World", "location":"Phnom Peng" } 
+<msg timestamp="20210924 19:51:21.390" level="INFO">POST Request : url=http://localhost:2020/mb/test 
+ path_url=/mb/test 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'charset': 'utf-8', 'Content-Length': '130'} 
+ body={ "data":{ "username": "someas", "password": "password", "gender": "male", "phone": "phone", "amount": 1, "mb":"Hello MB Bank" } } 
  </msg>
-<msg timestamp="20210923 20:59:48.277" level="INFO">POST Response : url=http://localhost:3000/company 
- status=201, reason=Created 
- headers={'X-Powered-By': 'Express', 'Vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Expose-Headers': 'Location', 'Location': 'http://localhost:3000/company/45', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '61', 'ETag': 'W/"3d-QwdBi8jRDp0E19lbtTV4f5Y0jxw"', 'Date': 'Thu, 23 Sep 2021 13:59:48 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={
-  "name": "World",
-  "location": "Phnom Peng",
-  "id": 45
-} 
+<msg timestamp="20210924 19:51:21.390" level="INFO">POST Response : url=http://localhost:2020/mb/test 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Connection': 'close', 'Date': 'Fri, 24 Sep 2021 12:51:21 GMT', 'Transfer-Encoding': 'chunked'} 
+ body={"status":{"code":"success","message":"success","Username":"someas","Password":"password"}} 
  </msg>
-<msg timestamp="20210923 20:59:48.278" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20210923 20:59:48.268" endtime="20210923 20:59:48.278"/>
+<msg timestamp="20210924 19:51:21.390" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210924 19:51:21.385" endtime="20210924 19:51:21.390"/>
 </kw>
+<msg timestamp="20210924 19:51:21.391" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210924 19:51:21.385" endtime="20210924 19:51:21.391"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>Message code that response [${response.status_code}]</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20210924 19:51:21.392" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210924 19:51:21.391" endtime="20210924 19:51:21.392"/>
+</kw>
+<kw name="Check Response" library="keyword">
+<arg>${response.json()}</arg>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
+<arg>${resp}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210923 20:59:48.278" endtime="20210923 20:59:48.279"/>
+<status status="PASS" starttime="20210924 19:51:21.393" endtime="20210924 19:51:21.394"/>
 </kw>
-<msg timestamp="20210923 20:59:48.279" level="INFO">${res} = None</msg>
-<status status="PASS" starttime="20210923 20:59:48.266" endtime="20210923 20:59:48.279"/>
+<kw name="Get From Dictionary" library="Collections">
+<var>${status}</var>
+<arg>${resp}</arg>
+<arg>status</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20210924 19:51:21.394" level="INFO">${status} = {'code': 'success', 'message': 'success', 'Username': 'someas', 'Password': 'password'}</msg>
+<status status="PASS" starttime="20210924 19:51:21.394" endtime="20210924 19:51:21.394"/>
 </kw>
-<status status="PASS" starttime="20210923 20:59:48.263" endtime="20210923 20:59:48.279"/>
+<kw name="Get From Dictionary" library="Collections">
+<var>${code}</var>
+<arg>${status}</arg>
+<arg>code</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20210924 19:51:21.395" level="INFO">${code} = success</msg>
+<status status="PASS" starttime="20210924 19:51:21.395" endtime="20210924 19:51:21.395"/>
 </kw>
-<status status="PASS" starttime="20210923 20:59:48.263" endtime="20210923 20:59:48.279"/>
+<kw name="Get From Dictionary" library="Collections">
+<var>${message}</var>
+<arg>${status}</arg>
+<arg>message</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20210924 19:51:21.395" level="INFO">${message} = success</msg>
+<status status="PASS" starttime="20210924 19:51:21.395" endtime="20210924 19:51:21.395"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Username}</var>
+<arg>${status}</arg>
+<arg>Username</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20210924 19:51:21.396" level="INFO">${Username} = someas</msg>
+<status status="PASS" starttime="20210924 19:51:21.395" endtime="20210924 19:51:21.396"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Password}</var>
+<arg>${status}</arg>
+<arg>Password</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20210924 19:51:21.396" level="INFO">${Password} = password</msg>
+<status status="PASS" starttime="20210924 19:51:21.396" endtime="20210924 19:51:21.396"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${code}</arg>
+<arg>success</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 19:51:21.396" endtime="20210924 19:51:21.396"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${message}</arg>
+<arg>success</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 19:51:21.397" endtime="20210924 19:51:21.397"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Username}</arg>
+<arg>someas</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 19:51:21.397" endtime="20210924 19:51:21.397"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Password}</arg>
+<arg>password</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210924 19:51:21.397" endtime="20210924 19:51:21.398"/>
+</kw>
+<status status="PASS" starttime="20210924 19:51:21.392" endtime="20210924 19:51:21.398"/>
+</kw>
+<status status="PASS" starttime="20210924 19:51:21.383" endtime="20210924 19:51:21.398"/>
+</kw>
+<status status="PASS" starttime="20210924 19:51:21.383" endtime="20210924 19:51:21.398"/>
 </test>
-<status status="PASS" starttime="20210923 20:59:48.109" endtime="20210923 20:59:48.280"/>
+<doc>Suite description</doc>
+<status status="PASS" starttime="20210924 19:51:21.144" endtime="20210924 19:51:21.399"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="Get Api">Get Api</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Api Upada Data">Api Upada Data</stat>
 </suite>
 </statistics>
 <errors>
