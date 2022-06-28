@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Suite description
+Documentation    Update Data in Talbe
 Resource    ../keywords/keyword.robot
 Resource    ../resources/import.robot
 *** Test Cases ***

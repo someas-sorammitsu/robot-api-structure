@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1rc1 (Python 3.9.5 on darwin)" generated="20210927 21:14:01.937" rpa="false" schemaversion="2">
+<suite id="s1" name="Delete And Update" source="/Users/Shared/sharing/api_automation/robot-api-structure/keywords/delete_and_update.robot">
+<test id="s1-t1" name="Delete Data">
+<kw name="Test Delete">
+<arg>2</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json; charset=utf-8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210927 21:14:02.167" level="INFO">${headers} = {'Content-Type': 'application/json; charset=utf-8'}</msg>
+<status status="PASS" starttime="20210927 21:14:02.166" endtime="20210927 21:14:02.167"/>
+</kw>
+<kw name="Delete Requests" library="commands">
+<var>${resp}</var>
+<arg>${base_url}</arg>
+<arg>${staff}/${id}</arg>
+<arg>${headers}</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>delete</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210927 21:14:02.168" level="INFO">Creating Session using : alias=delete, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210927 21:14:02.168" endtime="20210927 21:14:02.168"/>
+</kw>
+<kw name="Delete On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>delete</arg>
+<arg>${url_path}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20210927 21:14:02.182" level="INFO">DELETE Request : url=http://localhost:3000/staff/2 
+ path_url=/staff/2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20210927 21:14:02.182" level="INFO">DELETE Response : url=http://localhost:3000/staff/2 
+ status=404, reason=Not Found 
+ headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'ETag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Date': 'Mon, 27 Sep 2021 14:14:02 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={} 
+ </msg>
+<msg timestamp="20210927 21:14:02.182" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20210927 21:14:02.168" endtime="20210927 21:14:02.182"/>
+</kw>
+<msg timestamp="20210927 21:14:02.182" level="INFO">${resp} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20210927 21:14:02.167" endtime="20210927 21:14:02.182"/>
+</kw>
+<status status="PASS" starttime="20210927 21:14:02.166" endtime="20210927 21:14:02.182"/>
+</kw>
+<kw name="KTY Update" library="commands">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>http://localhost:3000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210927 21:14:02.183" level="INFO">Creating Session using : alias=mysession, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210927 21:14:02.183" endtime="20210927 21:14:02.183"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210927 21:14:02.184" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20210927 21:14:02.183" endtime="20210927 21:14:02.184"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=JJ</arg>
+<arg>phone=09876543</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210927 21:14:02.184" level="INFO">${body} = {'name': 'JJ', 'phone': '09876543'}</msg>
+<status status="PASS" starttime="20210927 21:14:02.184" endtime="20210927 21:14:02.184"/>
+</kw>
+<kw name="Put On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>staff/5</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20210927 21:14:02.190" level="INFO">PUT Request : url=http://localhost:3000/staff/5 
+ path_url=/staff/5 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '35', 'Content-Type': 'application/json'} 
+ body=b'{"name": "JJ", "phone": "09876543"}' 
+ </msg>
+<msg timestamp="20210927 21:14:02.191" level="INFO">PUT Response : url=http://localhost:3000/staff/5 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '52', 'ETag': 'W/"34-FZl10Sm5GJsLAzG4li5bq4/3zeo"', 'Date': 'Mon, 27 Sep 2021 14:14:02 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+  "name": "JJ",
+  "phone": "09876543",
+  "id": 5
+} 
+ </msg>
+<msg timestamp="20210927 21:14:02.191" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210927 21:14:02.184" endtime="20210927 21:14:02.191"/>
+</kw>
+<status status="PASS" starttime="20210927 21:14:02.183" endtime="20210927 21:14:02.191"/>
+</kw>
+<status status="PASS" starttime="20210927 21:14:02.166" endtime="20210927 21:14:02.191"/>
+</test>
+<test id="s1-t2" name="Update Data Test">
+<kw name="Update Data">
+<arg>12</arg>
+<arg>Cambodia</arg>
+<arg>Phon Penh</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json; charset=utf-8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210927 21:14:02.193" level="INFO">${headers} = {'Content-Type': 'application/json; charset=utf-8'}</msg>
+<status status="PASS" starttime="20210927 21:14:02.193" endtime="20210927 21:14:02.193"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${json}</var>
+<arg>{</arg>
+<arg>"name": "${name}",</arg>
+<arg>"location": "${location}"</arg>
+<arg>}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210927 21:14:02.193" level="INFO">${json} = { "name": "Cambodia", "location": "Phon Penh" }</msg>
+<status status="PASS" starttime="20210927 21:14:02.193" endtime="20210927 21:14:02.194"/>
+</kw>
+<kw name="Update Requests" library="commands">
+<var>${resp}</var>
+<arg>${base_url}</arg>
+<arg>${path}/${id}</arg>
+<arg>${json}</arg>
+<arg>${headers}</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>update</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210927 21:14:02.195" level="INFO">Creating Session using : alias=update, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210927 21:14:02.194" endtime="20210927 21:14:02.195"/>
+</kw>
+<kw name="Put On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>update</arg>
+<arg>${url_path}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20210927 21:14:02.203" level="INFO">PUT Request : url=http://localhost:3000/company/12 
+ path_url=/company/12 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '47'} 
+ body={ "name": "Cambodia", "location": "Phon Penh" } 
+ </msg>
+<msg timestamp="20210927 21:14:02.203" level="INFO">PUT Response : url=http://localhost:3000/company/12 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '63', 'ETag': 'W/"3f-bv1x5oAG/ETweWWNiscQUqldxrU"', 'Date': 'Mon, 27 Sep 2021 14:14:02 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+  "name": "Cambodia",
+  "location": "Phon Penh",
+  "id": 12
+} 
+ </msg>
+<msg timestamp="20210927 21:14:02.203" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210927 21:14:02.195" endtime="20210927 21:14:02.203"/>
+</kw>
+<msg timestamp="20210927 21:14:02.204" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210927 21:14:02.194" endtime="20210927 21:14:02.204"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210927 21:14:02.204" endtime="20210927 21:14:02.204"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210927 21:14:02.204" endtime="20210927 21:14:02.205"/>
+</kw>
+<status status="PASS" starttime="20210927 21:14:02.192" endtime="20210927 21:14:02.206"/>
+</kw>
+<kw name="Update Data">
+<arg>13</arg>
+<arg>Thailand</arg>
+<arg>Bank Kork</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Content-Type=application/json; charset=utf-8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210927 21:14:02.207" level="INFO">${headers} = {'Content-Type': 'application/json; charset=utf-8'}</msg>
+<status status="PASS" starttime="20210927 21:14:02.206" endtime="20210927 21:14:02.207"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${json}</var>
+<arg>{</arg>
+<arg>"name": "${name}",</arg>
+<arg>"location": "${location}"</arg>
+<arg>}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210927 21:14:02.207" level="INFO">${json} = { "name": "Thailand", "location": "Bank Kork" }</msg>
+<status status="PASS" starttime="20210927 21:14:02.207" endtime="20210927 21:14:02.207"/>
+</kw>
+<kw name="Update Requests" library="commands">
+<var>${resp}</var>
+<arg>${base_url}</arg>
+<arg>${path}/${id}</arg>
+<arg>${json}</arg>
+<arg>${headers}</arg>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>update</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20210927 21:14:02.208" level="INFO">Creating Session using : alias=update, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210927 21:14:02.208" endtime="20210927 21:14:02.208"/>
+</kw>
+<kw name="Put On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>update</arg>
+<arg>${url_path}</arg>
+<arg>data=${body}</arg>
+<arg>headers=${headers}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20210927 21:14:02.218" level="INFO">PUT Request : url=http://localhost:3000/company/13 
+ path_url=/company/13 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '47'} 
+ body={ "name": "Thailand", "location": "Bank Kork" } 
+ </msg>
+<msg timestamp="20210927 21:14:02.219" level="INFO">PUT Response : url=http://localhost:3000/company/13 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '63', 'ETag': 'W/"3f-/O//R4fM+nFF/HFqUiRNCNcyKwQ"', 'Date': 'Mon, 27 Sep 2021 14:14:02 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+  "name": "Thailand",
+  "location": "Bank Kork",
+  "id": 13
+} 
+ </msg>
+<msg timestamp="20210927 21:14:02.219" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210927 21:14:02.209" endtime="20210927 21:14:02.219"/>
+</kw>
+<msg timestamp="20210927 21:14:02.219" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210927 21:14:02.207" endtime="20210927 21:14:02.219"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210927 21:14:02.220" endtime="20210927 21:14:02.220"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${resp.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210927 21:14:02.220" endtime="20210927 21:14:02.221"/>
+</kw>
+<status status="PASS" starttime="20210927 21:14:02.206" endtime="20210927 21:14:02.222"/>
+</kw>
+<status status="PASS" starttime="20210927 21:14:02.191" endtime="20210927 21:14:02.222"/>
+</test>
+<status status="PASS" starttime="20210927 21:14:01.938" endtime="20210927 21:14:02.222"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Delete And Update">Delete And Update</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

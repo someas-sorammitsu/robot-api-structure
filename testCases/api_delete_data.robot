@@ -1,8 +1,8 @@
 *** Settings ***
-Documentation    Suite description
+Documentation    Delete Data From Table
 Resource    ../keywords/keyword.robot
 Resource    ../resources/import.robot
 
 *** Test Cases ***
 TC1 Delett Data
-    Delete Data     10
+    Delete Data     11
